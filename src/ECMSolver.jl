@@ -455,12 +455,12 @@ function Solve_ECM(
         print("\n\n------------------------")
         print("\nSolution found at point:")
         print("\n\nx = ", sol[1],"\n")
-        print("\nObjective Value = ", sol[2])
+        print("\nObjective Value = ", sol[2], "\n\n")
     else
         print("\nParameters not correct. Either η < ϵ or Ax = b is an overdetermined system")
     end
 
-
+    return sol[2]
 end
 
 end
