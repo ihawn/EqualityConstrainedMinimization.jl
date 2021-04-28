@@ -1,6 +1,6 @@
 # EqualityConstrainedMinimization
 
-This is a non-linear minimization solver that works with all convex problems
+This is a non-linear minimization solver I wrote that works with all convex problems
 with linear equality constraints. It is intended to solve problems in the form
 "minimize f(x) such that Ax = b" and "minimize f(x)" for the unconstrained case.
 I am taking the algorithms directly from "Convex Optimization" by Stephen Boyd
