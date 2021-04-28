@@ -8,4 +8,4 @@ and Lieven Vandenberghe. This package is intended for learning purposes and whil
 it may not be the fastest solver, it is certainly one of the easiest to understand.
 
 See "UsageExamples.jl" for some usage examples.
-See the two ipynb notebooks for even more examples and some mathematical insight into how these algorithms work
+See the two ipynb notebooks for even more examples and some mathematical insight into how these algorithms work.
