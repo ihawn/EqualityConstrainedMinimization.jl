@@ -1,4 +1,6 @@
-using .ECMSolver
+#using .ECMSolver
+
+include("ECMSolver.jl")
 using LinearAlgebra
 
 #Generates ECM problem with feasible starting point
@@ -34,7 +36,7 @@ l = 5
 w = 3 #Constraint coefficient mtx will be an n x m matrix
 ECM = Generate_ECM(l, w, 1)
 mtx = ECM[1] #the A in Ax = b
-x = ones(l) #ECM[2] #set equal to ECM[2] to test feasible start
+x = ones(l)*0.5 #ECM[2] #set equal to ECM[2] to test feasible start
 vect = ECM[3] #the b in Ax = b
 
 f(_x) = Test_Objective_Con(_x)
