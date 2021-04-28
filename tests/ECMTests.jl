@@ -1,22 +1,7 @@
-using .ECMSolver
+using Test
+using ECMSolver
 using LinearAlgebra
 
-#Generates ECM problem with feasible starting point
-function Generate_ECM(_n, _p, A_bound)
-    _x = rand(_n)
-    _A = rand(_p, _n) * A_bound
-
-    it = 0
-    #Ensure A has full rank
-    while rank(_A) != max(_n, _p) && it < 100 #Cap generation at 100 tries. The odds of needing this many are very low
-        _A = rand(_p, _n) * A_bound
-        it += 1
-    end
-
-    _b = _A * _x
-
-    return _A, _x, _b
-end
 
 #Test objective for constrained problem (see Boyd and Vandenberghe problem 10.15)
 function Test_Objective_Con(_x)
@@ -30,12 +15,11 @@ function Test_Objective_Con(_x)
     return sum
 end
 
-l = 5
-w = 3 #Constraint coefficient mtx will be an n x m matrix
-ECM = Generate_ECM(l, w, 1)
-mtx = ECM[1] #the A in Ax = b
+l = 3
+w = 2
+mtx = [1 2 3; 4 5 6]
 x = ones(l) #ECM[2] #set equal to ECM[2] to test feasible start
-vect = ECM[3] #the b in Ax = b
+vect = [7; 8]
 
 f(_x) = Test_Objective_Con(_x)
 

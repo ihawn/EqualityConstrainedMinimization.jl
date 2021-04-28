@@ -442,11 +442,11 @@ function Solve_ECM(
             end
         else
             if feasible
-                print("\nVector b not given. Therefore, x is assumed feasible")
+                print("\n\nVector b not given. Therefore, x is assumed feasible")
                 print("\nSolving using Feasible Start Newton Method")
                 sol = Newton_FS(f, x, A, n, m, α, β, ϵ, maxIt, verbose)
             else
-                print("\nVector b given. Therefore, x is assumed infeasible")
+                print("\n\nVector b given. Therefore, x is assumed infeasible")
                 print("\nSolving using Infeasible Start Newton Method")
                 sol = Newton_IFS(f, x, A, b, n, m, α, β, ϵ, maxIt, verbose)
             end
