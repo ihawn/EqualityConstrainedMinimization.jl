@@ -50,4 +50,4 @@ F_Sol = ECMSolver.Solve_ECM(f, x, A = mtx, verbose = false)
 #Setting force_gradient = true will force the gradient method
 #Do this if ϵ is relatively large.
 #Otherwise, the solver will first use Gradient Descent and then switch to Newton's Method
-#U_Sol = ECMSolver.Solve_ECM(f, x, verbose = false)
+U_Sol = ECMSolver.Solve_ECM(f, x, verbose = false)
