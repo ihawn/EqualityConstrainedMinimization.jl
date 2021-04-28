@@ -1,6 +1,6 @@
 #using .ECMSolver
 
-include("ECMSolver.jl")
+include("EqualityConstrainedMinimization.jl")
 using LinearAlgebra
 
 #Generates ECM problem with feasible starting point

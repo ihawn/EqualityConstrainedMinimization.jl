@@ -3,6 +3,10 @@ uuid = "3687fdae-f7fc-44d6-b290-5a4209d5cae9"
 authors = ["Isaac Hawn <ihawn.pl15@gmail.com>"]
 version = "0.1.0"
 
+[deps]
+Calculus = "49dc2e85-a5d0-5ad3-a950-438e2897f1b9"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+
 [compat]
 julia = "1.5"
 
