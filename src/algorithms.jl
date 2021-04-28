@@ -14,24 +14,6 @@ Some functions are reused in the equality constrained section
 #Gradient Descent
 #################
 
-#Test objective for unconstrained problem (see Boyd and Vandenberghe problem 9.30)
-function Test_Objective_Uncon(_A, _x, _m, _n)
-    sum1 = 0
-    At = transpose(_A)
-
-    for i = 1:_m
-       sum1 += log(1 - (At[[i],:] * _x)[1])
-    end
-
-    sum2 = 0
-
-    for i = 1:_n
-        sum2 += log(1 - _x[i]^2)
-    end
-
-    return -sum1 - sum2
-end
-
 #Use Calculus.jl library to compute the gradient numerically
 function Compute_Gradient(_f, _x)
     return Calculus.gradient(g -> _f(g),_x)
