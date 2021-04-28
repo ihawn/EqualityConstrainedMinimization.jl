@@ -1,6 +1,4 @@
-#using .ECMSolver
-
-include("EqualityConstrainedMinimization.jl")
+using .EqualityConstrainedMinimization
 using LinearAlgebra
 
 #Generates ECM problem with feasible starting point
@@ -42,14 +40,14 @@ vect = ECM[3] #the b in Ax = b
 f(_x) = Test_Objective_Con(_x)
 
 #Solves the problem "minimize f(x) subject to Ax = b." Since b is given, we assume infeasible start
-IF_Sol = ECMSolver.Solve_ECM(f, x, A = mtx, b = vect, verbose = false)
+IF_Sol = Solve_ECM(f, x, A = mtx, b = vect, verbose = false)
 
 #Solves the problem "minimize f(x) subject to Ax = b." Since b not given, we assume feasible start
 x = ECM[2]
-F_Sol = ECMSolver.Solve_ECM(f, x, A = mtx, verbose = false)
+F_Sol = Solve_ECM(f, x, A = mtx, verbose = false)
 
 #Solves the problem "minimize f(x)."
 #Setting force_gradient = true will force the gradient method
 #Do this if ϵ is relatively large.
 #Otherwise, the solver will first use Gradient Descent and then switch to Newton's Method
-U_Sol = ECMSolver.Solve_ECM(f, x, verbose = false)
+U_Sol = Solve_ECM(f, x, verbose = false)

@@ -1,4 +1,4 @@
-module ECMSolver
+module EqualityConstrainedMinimization
 export Solve_ECM
 using Calculus
 using LinearAlgebra

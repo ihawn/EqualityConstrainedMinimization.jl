@@ -1,5 +1,6 @@
-using .ECMSolver
+using .EqualityConstrainedMinimization
 using Test
+using LinearAlgebra
 
 #Test objective for constrained problem (see Boyd and Vandenberghe problem 10.15)
 function Test_Objective_Con(_x)
@@ -46,10 +47,10 @@ f(_x) = Test_Objective_Con(_x)
 
 
 @testset "ECMSolver.jl" begin
-    @test ECMSolver.Solve_ECM(f, x, verbose = false) ≈ -1.1036383232 rtol = 1e-8
-    @test ECMSolver.Solve_ECM(f, x, A = mtx, b = vect, verbose = false) ≈ -1.0587361852 rtol = 1e-8
-    @test ECMSolver.Solve_ECM(f, feasX, A = mtx, verbose = false) ≈ -1.0587361852 rtol = 1e-8
-    @test ECMSolver.Solve_ECM(f, feasX, A = mtx, b = vect, verbose = false) ≈ -1.0587361852 rtol = 1e-8
+    @test Solve_ECM(f, x, verbose = false) ≈ -1.1036383232 rtol = 1e-8
+    @test Solve_ECM(f, x, A = mtx, b = vect, verbose = false) ≈ -1.0587361852 rtol = 1e-8
+    @test Solve_ECM(f, feasX, A = mtx, verbose = false) ≈ -1.0587361852 rtol = 1e-8
+    @test Solve_ECM(f, feasX, A = mtx, b = vect, verbose = false) ≈ -1.0587361852 rtol = 1e-8
 
-    @test ECMSolver.Solve_ECM(f, ECM[2], A = ECM[1], verbose = false) ≈ ECMSolver.Solve_ECM(f, ones(n), A = ECM[1], b = ECM[3], verbose = false) rtol = 1e-8
+    @test Solve_ECM(f, ECM[2], A = ECM[1], verbose = false) ≈ Solve_ECM(f, ones(n), A = ECM[1], b = ECM[3], verbose = false) rtol = 1e-8
 end
