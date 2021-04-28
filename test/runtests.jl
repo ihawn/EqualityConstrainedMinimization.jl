@@ -46,7 +46,7 @@ ECM = Generate_ECM(n, p, 1)
 f(_x) = Test_Objective_Con(_x)
 
 
-@testset "ECMSolver.jl" begin
+@testset "EqualityConstrainedMinimization.jl" begin
     @test Solve_ECM(f, x, verbose = false) ≈ -1.1036383232 rtol = 1e-8
     @test Solve_ECM(f, x, A = mtx, b = vect, verbose = false) ≈ -1.0587361852 rtol = 1e-8
     @test Solve_ECM(f, feasX, A = mtx, verbose = false) ≈ -1.0587361852 rtol = 1e-8
