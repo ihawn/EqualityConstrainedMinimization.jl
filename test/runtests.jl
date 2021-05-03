@@ -1,4 +1,4 @@
-using .EqualityConstrainedMinimization
+using EqualityConstrainedMinimization
 using Test
 using LinearAlgebra
 

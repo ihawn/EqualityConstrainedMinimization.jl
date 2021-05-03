@@ -40,6 +40,7 @@ Algorithms used for equality constrained problem:
     - 'verbose': Setting this to true will show data from each iteration.
     - 'force_gradient': Setting this to true will force only the gradient descent method for unconstrained problems. Do this when ϵ is relatively large.
 
+x^2 + y^2 -> x[1]^2 + x[2]^2
 
 Main solver function:
 Solve_ECM(

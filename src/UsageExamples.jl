@@ -1,4 +1,4 @@
-using .EqualityConstrainedMinimization
+using EqualityConstrainedMinimization
 using LinearAlgebra
 
 #Generates ECM problem with feasible starting point
